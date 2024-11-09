@@ -1,0 +1,145 @@
+@use "./variables.scss" as *;
+@use "./reset.scss" as *;
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: var(--fontFamily);
+  color: var(--mischka);
+  background-color: var(--snow);
+  font-weight: var(--regular);
+  font-size: .9rem;
+}
+
+header {
+  text-align: center;
+  padding-top: 5.3rem;
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 auto;
+
+  h1 {
+    font-weight: var(--medium2);
+    padding: .3rem 0 .6rem;
+  }
+
+  h2 {
+    font-weight: var(--light-x);
+  }
+
+  h1, h2 {
+    color: var(--east-bay);
+    //font-size: 2.2rem;
+    font-size: clamp(1.3rem, 1.3rem + 1vw, 2.2rem);
+  }
+
+  p {
+    color: var(--mischka);
+    padding-bottom: 3.66rem;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 350px));
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+    '. team .'
+    'supervisor team calculator'
+    'supervisor karma calculator'
+    '. karma .';
+  }
+
+  &__box {
+    padding: 2rem;
+    border-radius: .6rem;
+    overflow: hidden;
+    height: 250px;
+    position: relative;
+    -webkit-box-shadow: 0 6px 22px 0 rgba(163, 165, 174, 0.8);
+    -moz-box-shadow: 0 6px 22px 0 rgba(163, 165, 174, 0.8);
+    box-shadow: 0 6px 22px 0 rgba(163, 165, 174, 0.8);;
+    box-sizing: border-box;
+
+    &-title {
+      font-weight: var(--medium2);
+      margin-bottom: 0.7rem;
+      color: var(--east-bay);
+    }
+
+    &-description {
+
+    }
+
+    img {
+      position: absolute;
+      right: 1.87rem;
+      bottom: 1.87rem;
+    }
+  }
+}
+
+.item1 {
+  grid-area: supervisor;
+}
+
+.item2 {
+  grid-area: team;
+}
+
+.item3 {
+  grid-area: karma;
+}
+
+.item4 {
+  grid-area: calculator;
+}
+
+.supervisor {
+  border-top: .2rem solid var(--cyan);
+}
+
+.team {
+  border-top: .2rem solid var(--red);
+}
+
+.karma {
+  border-top: .2rem solid var(--orange);
+}
+
+.calculator {
+  border-top: .2rem solid var(--blue);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 1rem 0;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+@media (max-width:1200px){
+  body{
+    padding: 0 2rem;
+  }
+  .grid__container {
+    grid-template-columns: repeat(1, minmax(250px, 350px)); /* Each grid item takes a full row */
+    grid-template-areas:
+      "supervisor"
+      "team"
+      "karma"
+      "calculator";
+  }
+}

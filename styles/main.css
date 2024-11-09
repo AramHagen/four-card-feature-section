@@ -1,0 +1,302 @@
+:root {
+  --red: hsl(0, 78%, 62%);
+  --white: #ffffff;
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --east-bay: #4c4e61;
+  --mischka: #a3a5ae;
+  --snow: #fafafa;
+  --light-x: 200;
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --medium2: 600;
+  --bold: 700;
+  --fontFamily: "Poppins", sans-serif;
+}
+
+/*--------------------reset--------------------------*/
+a,
+abbr,
+acronym,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
+body,
+center,
+canvas,
+caption,
+cite,
+code,
+command,
+datalist,
+dd,
+del,
+details,
+dfn,
+dl,
+div,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+keygen,
+label,
+legend,
+li,
+meter,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+progress,
+q,
+s,
+samp,
+section,
+small,
+span,
+source,
+strong,
+sub,
+sup,
+tfoot,
+thead,
+u,
+ul,
+var {
+  background: transparent;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  vertical-align: top;
+}
+
+a {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+  border: 0;
+}
+
+embed {
+  vertical-align: top;
+}
+
+article,
+aside,
+audio,
+canvas,
+command,
+datalist,
+details,
+embed,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+keygen,
+meter,
+nav,
+output,
+progress,
+section,
+source,
+video {
+  display: block;
+}
+
+mark,
+rp,
+rt,
+ruby,
+summary,
+time {
+  display: inline;
+}
+
+a,
+span {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: #595959;
+  outline: none;
+  -moz-transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+strong {
+  font-weight: var(--bold);
+}
+
+em {
+  font-style: italic;
+}
+
+ol {
+  list-style: decimal;
+}
+
+.t-center {
+  text-align: center;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: var(--fontFamily);
+  color: var(--mischka);
+  background-color: var(--snow);
+  font-weight: var(--regular);
+  font-size: 0.9rem;
+}
+
+header {
+  text-align: center;
+  padding-top: 5.3rem;
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+header h1 {
+  font-weight: var(--medium2);
+  padding: 0.3rem 0 0.6rem;
+}
+header h2 {
+  font-weight: var(--light-x);
+}
+header h1, header h2 {
+  color: var(--east-bay);
+  font-size: clamp(1.3rem, 1.3rem + 1vw, 2.2rem);
+}
+header p {
+  color: var(--mischka);
+  padding-bottom: 3.66rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.grid__container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 350px));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: ". team ." "supervisor team calculator" "supervisor karma calculator" ". karma .";
+}
+.grid__box {
+  padding: 2rem;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  height: 250px;
+  position: relative;
+  -webkit-box-shadow: 0 6px 22px 0 rgba(163, 165, 174, 0.8);
+  -moz-box-shadow: 0 6px 22px 0 rgba(163, 165, 174, 0.8);
+  box-shadow: 0 6px 22px 0 rgba(163, 165, 174, 0.8);
+  box-sizing: border-box;
+}
+.grid__box-title {
+  font-weight: var(--medium2);
+  margin-bottom: 0.7rem;
+  color: var(--east-bay);
+}
+.grid__box img {
+  position: absolute;
+  right: 1.87rem;
+  bottom: 1.87rem;
+}
+
+.item1 {
+  grid-area: supervisor;
+}
+
+.item2 {
+  grid-area: team;
+}
+
+.item3 {
+  grid-area: karma;
+}
+
+.item4 {
+  grid-area: calculator;
+}
+
+.supervisor {
+  border-top: 0.2rem solid var(--cyan);
+}
+
+.team {
+  border-top: 0.2rem solid var(--red);
+}
+
+.karma {
+  border-top: 0.2rem solid var(--orange);
+}
+
+.calculator {
+  border-top: 0.2rem solid var(--blue);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 1rem 0;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 1200px) {
+  body {
+    padding: 0 2rem;
+  }
+  .grid__container {
+    grid-template-columns: repeat(1, minmax(250px, 350px)); /* Each grid item takes a full row */
+    grid-template-areas: "supervisor" "team" "karma" "calculator";
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
